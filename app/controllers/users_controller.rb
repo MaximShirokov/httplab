@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @period = params[:period].to_sym
 
     @users = {
-      top_by_messages: User.top_by_messages(period),
-      top_by_likes: User.top_by_likes(period),
+      top_by_messages: User.top_by(:messages, period),
+      top_by_votes: User.top_by(:votes, period),
     }
   end
 end

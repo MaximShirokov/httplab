@@ -1,4 +1,4 @@
-class Like < ApplicationRecord
+class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :message
 end

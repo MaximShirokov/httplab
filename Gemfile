@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails'
+  gem 'faker'
   gem 'rubocop'
 end
 
@@ -50,6 +51,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

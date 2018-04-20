@@ -61,9 +61,18 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    database_cleaner (1.6.2)
     diff-lcs (1.3)
+    docile (1.3.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -72,6 +81,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    json (2.1.0)
     jsonapi-renderer (0.2.0)
     jwt (2.1.0)
     listen (3.1.5)
@@ -171,6 +181,11 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     simple_command (0.0.9)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     slim (3.0.9)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
@@ -215,6 +230,9 @@ DEPENDENCIES
   bcrypt
   byebug
   coffee-rails (~> 4.2)
+  database_cleaner
+  factory_girl_rails
+  faker
   jbuilder (~> 2.5)
   jwt
   listen (>= 3.0.5, < 3.2)
@@ -226,6 +244,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   simple_command
+  simplecov
   slim
   spring
   spring-watcher-listen (~> 2.0.0)

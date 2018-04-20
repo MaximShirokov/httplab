@@ -1,11 +1,11 @@
-# app/controllers/api/v1/messages/likes_controller.rb
+# app/controllers/api/v1/messages/votes_controller.rb
 
 module Api::V1
-  class Messages::LikesController < BaseController
+  class Messages::VotesController < BaseController
     before_action :set_message
 
     def create
-      @message.likes.where(user_id: current_user.id).first_or_create
+      @message.votes.where(user_id: current_user.id).first_or_create(rating: params[:rating].to_i)
 
       render json: { message: "Message #{@message.id} liked"}, status: :created
     end

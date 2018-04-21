@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       post 'register', to: 'users#register'
 
       resources :messages, only: %i[index create] do
-        resource :like, only: :create, module: :messages
+        resource :vote, only: :create, module: :messages
       end
     end
   end

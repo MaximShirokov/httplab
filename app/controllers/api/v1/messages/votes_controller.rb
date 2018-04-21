@@ -7,7 +7,7 @@ module Api::V1
     def create
       @message.votes.where(user_id: current_user.id).first_or_create(rating: params[:rating].to_i)
 
-      render json: { message: "Message #{@message.id} liked"}, status: :created
+      render json: { message: "Message #{@message.id} voted"}, status: :created
     end
 
     private

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'authenticate', to: 'authentication#authenticate'
-      post 'register', to: 'users#register'
+      resources :user, only: :create
 
       resources :messages, only: %i[index create] do
         resource :vote, only: :create, module: :messages

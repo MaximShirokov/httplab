@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
   # Validations
-  validates_presence_of :text
+  validates :text, presence: true
   validates :text, length: { in: 5..140 }
 
   # Associations

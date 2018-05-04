@@ -1,11 +1,16 @@
-def auth
-  @controller = Api::V1::AuthenticationController.new
+module ControllerMacros
+  def auth
+    # before(:each) do
 
-  post :authenticate, params: { email: user.email, password: user.password }
+    # end
+    @controller = Api::V1::AuthenticationController.new
 
-  auth_token = JSON.parse(response.body)['auth_token']
+    post :authenticate, params: { email: user.email, password: user.password }
 
-  @controller = Api::V1::MessagesController.new
+    auth_token = JSON.parse(response.body)['auth_token']
 
-  @request.headers['Authorization'] = auth_token
+    @controller = Api::V1::MessagesController.new
+
+    @request.headers['Authorization'] = auth_token
+  end
 end

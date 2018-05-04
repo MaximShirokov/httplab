@@ -16,6 +16,6 @@ RSpec.describe ::Api::V1::AuthenticationController, type: :controller do
 
     expect(response.status).to eq(401)
     expect(response.message).to eq('Unauthorized')
-    expect(response.body).to eq('{\'error\':{\'user_authentication\':[\'invalid credentials\']}}')
+    expect(response.body).to eq("{\"error\":{\"user_authentication\":[\"invalid credentials\"]}}")
   end
 end

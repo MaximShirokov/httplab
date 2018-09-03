@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/commands/authenticate_user.rb
 
 class AuthenticateUser

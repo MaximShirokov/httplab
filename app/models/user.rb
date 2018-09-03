@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Validations
   validates :email, :password_digest, presence: true
@@ -40,8 +42,8 @@ class User < ApplicationRecord
                 end
 
     users_ids = messages.select('messages.user_id, avg(votes.rating) as average_rating')
-                        .group('messages.user_id')
-                        .order('average_rating DESC')
+      .group('messages.user_id')
+      .order('average_rating DESC')
 
     where(id: users_ids)
   }

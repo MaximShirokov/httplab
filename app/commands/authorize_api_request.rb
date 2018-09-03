@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/commands/authorize_api_request.rb
 
 class AuthorizeApiRequest

@@ -13,21 +13,6 @@ class User < ApplicationRecord
   has_secure_password
 
   # Scopes
-  scope :top_by, lambda { |scope, period = nil|
-    if period == :last_day
-      period_in_time = 1.day.ago
-    elsif period == :last_week
-      period_in_time = 1.week.ago
-    end
-
-    case period
-    when :last_day, :last_week
-      left_joins(scope).where("#{scope}.created_at = ?", period_in_time)
-    else
-      left_joins(scope)
-    end.group(:id).order("COUNT(#{scope}.id) DESC").limit(5)
-  }
-
   scope :top_by_avg_messages_rating, lambda { |period = nil|
     if period == :last_day
       period_in_time = 1.day.ago
